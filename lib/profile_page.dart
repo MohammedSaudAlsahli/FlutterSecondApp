@@ -113,22 +113,42 @@ class ProfilePage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: const Color(0xffF9EFE5),
         elevation: 2,
-        title: const Row(
+        title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text(
-              'data',
-              style: TextStyle(color: Colors.black),
-            ),
-            SizedBox(
-              width: 8,
-            ),
-            Text(
-              'data',
-              style: TextStyle(color: Colors.black),
+            Image.asset('assets/logos/logo.png'),
+            const SizedBox(width: 8),
+            const Text(
+              'EasySave',
+              style:
+                  TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
             )
           ],
         ),
+      ),
+      body: Column(
+        children: [
+          Expanded(child: Image.asset('assets/images/imageInit.png')),
+          Expanded(
+            child: Container(
+              decoration: BoxDecoration(color: Colors.white),
+              width: MediaQuery.of(context).size.width,
+              height: MediaQuery.of(context).size.height,
+              child: Column(
+                children: [
+                  Column(children: [Text('data'), Text('data')]),
+                  Column(children: [
+                    ElevatedButton(
+                      onPressed: () {},
+                      child: Text('data'),
+                    ),
+                    ElevatedButton(onPressed: () {}, child: Text('data'))
+                  ])
+                ],
+              ),
+            ),
+          )
+        ],
       ),
     );
   }
