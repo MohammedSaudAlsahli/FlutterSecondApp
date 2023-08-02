@@ -112,7 +112,7 @@ class ProfilePage extends StatelessWidget {
       backgroundColor: Color(0xffF9EFE5),
       appBar: AppBar(
         backgroundColor: const Color(0xffF9EFE5),
-        elevation: 2,
+        elevation: 0,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -128,22 +128,58 @@ class ProfilePage extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Expanded(child: Image.asset('assets/images/imageInit.png')),
+          Expanded(
+            child: Image.asset('assets/images/imageInit.png'),
+          ),
           Expanded(
             child: Container(
-              decoration: BoxDecoration(color: Colors.white),
+              decoration: const BoxDecoration(color: Colors.white),
               width: MediaQuery.of(context).size.width,
               height: MediaQuery.of(context).size.height,
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Column(children: [Text('data'), Text('data')]),
-                  Column(children: [
-                    ElevatedButton(
-                      onPressed: () {},
-                      child: Text('data'),
-                    ),
-                    ElevatedButton(onPressed: () {}, child: Text('data'))
-                  ])
+                  const Column(
+                    children: [
+                      Text(
+                        'Easy Way Save',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 40),
+                      ),
+                      Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Text(
+                          'Make your payment experience more better today. No additional admin fee',
+                          textAlign: TextAlign.center,
+                        ),
+                      )
+                    ],
+                  ),
+                  Column(
+                    children: [
+                      ElevatedButton(
+                        onPressed: () {},
+                        child: const Text('Login'),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black,
+                          fixedSize:
+                              Size(MediaQuery.of(context).size.width - 50, 50),
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          side: const BorderSide(color: Colors.black),
+                          foregroundColor: Colors.black,
+                          backgroundColor: Colors.white,
+                          fixedSize:
+                              Size(MediaQuery.of(context).size.width - 50, 50),
+                        ),
+                        onPressed: () {},
+                        child: const Text('Sign up'),
+                      )
+                    ],
+                  )
                 ],
               ),
             ),
